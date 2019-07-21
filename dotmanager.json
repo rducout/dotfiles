@@ -1,0 +1,16 @@
+{
+    "root": "./dotfiles",
+    "links": {
+        "~/.bash_profile": {
+            "path": ".bash_profile",
+            "force": true
+        },
+        "~/.bash": {
+            "path": ".bash",
+            "force": true
+        }
+    },
+    "append": {
+        "~/.bashrc": ".bashrc"
+    }
+}
