@@ -38,6 +38,11 @@ intellij-idea-community code
 git google-chrome-stable nodejs
 ```
 
+## TODOS
+
+- Backup system
+- DotManager documentation
+
 ## Authors
 
 * **Romain Ducout** - *Main author* - [rducout](https://github.com/rducout)

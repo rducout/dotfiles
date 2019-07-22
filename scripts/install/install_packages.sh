@@ -19,17 +19,6 @@ PACKAGE_LIST=(
     "${PACKAGE_TOOLS_LIST[@]}"
 )
 
-echo -e "============================================================"
-echo -e "You are about to install the following packages:"
-echo -e "============================================================"
-( IFS=$'\n'; echo "${PACKAGE_LIST[*]}" )
-echo -e "============================================================"
-read -p "Are you sure? " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-fi
-
 # Succeed if package in parameter is installed
 function is_package_installed {
 	if dpkg --get-selections | grep -q "^$1[[:space:]]*install$" >/dev/null ; then
@@ -90,4 +79,14 @@ function install {
 	sudo apt -y install "${PACKAGE_LIST[@]}"
 }
 
-install
+echo -e "============================================================"
+echo -e "You are about to install the following packages:"
+( IFS=$'\n'; echo "${PACKAGE_LIST[*]}" )
+echo -e "============================================================"
+read -r -p "Are you sure? [y|N] " configresponse
+echo
+if [[ $configresponse =~ ^(y|yes|Y) ]];then
+	install
+else
+	echo "Skipping package install.";
+fi

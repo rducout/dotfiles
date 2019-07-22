@@ -12,3 +12,4 @@ alias cdd='cd ~/Desktop'
 
 # utilities
 alias rd-kill-intellij='killall -9 chrome'
+alias rd-code-ext='code --list-extensions'

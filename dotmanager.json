@@ -6,7 +6,11 @@
             "force": true
         },
         "~/.bash": {
-            "path": ".bash",
+            "path": "bash",
+            "force": true
+        },
+        "~/.config/Code/User/settings.json": {
+            "path": "code/settings.json",
             "force": true
         }
     },

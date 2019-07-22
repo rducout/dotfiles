@@ -7,7 +7,7 @@ if [[ ! $(sudo echo 0) ]]; then exit; fi
 DIRNAME=$(dirname "$0")
 
 #install required packages
-( exec $DIRNAME/scripts/install.sh )
+( exec $DIRNAME/scripts/install/install.sh )
 
 # initialises dotfiles links
 ( exec $DIRNAME/scripts/dotfiles.sh )
