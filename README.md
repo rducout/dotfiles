@@ -10,15 +10,33 @@ After cloning this repository simply run the bootstrap script:
 ```
 ./bootstrap.sh
 ```
-This will setup all the symlinks for my dotfiles and install my favorite packages.
+This will first install all the required package and then run DotManager with the default configuration file.
 
-### Prerequisites
+## Prerequisites
 
 Nothing is required but having your Unix distribution installed.
 Tested on Ubuntu 18.04.
 
-### TODO
+## Usage
 
+#### Scripts
+
+All scripts are located in **scripts**folder:
+- **install.sh**: Installs all the usual packages.
+
+#### DotManager
+
+
+
+## Installed packages
+
+Here is the list of all the packages installed by default:
+
+```
+gimp inkscape meld vlc xclip
+intellij-idea-community code
+git google-chrome-stable nodejs
+```
 
 ## Authors
 

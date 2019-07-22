@@ -3,6 +3,6 @@
 # Romain Ducout
 
 DIRNAME=$(dirname "$0")
-echo $DIRNAME
 
-python $DIRNAME/../dotmanager/dotmanager.py $DIRNAME/../dotmanager.json
+cd $DIRNAME/../
+python -m dot_manager dotmanager.json

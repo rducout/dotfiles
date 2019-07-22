@@ -6,6 +6,6 @@ function run_bash_script () {
     fi
 }
 
-run_bash_script config.sh
-run_bash_script aliases.sh
-run_bash_script functions.sh
+run_bash_script ${BASH_SOURCE%/*}/config.sh
+run_bash_script ${BASH_SOURCE%/*}/aliases.sh
+run_bash_script ${BASH_SOURCE%/*}/functions.sh

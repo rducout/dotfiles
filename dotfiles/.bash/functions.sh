@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sample () {
-    echo "This is a sample!!!"
+hello () {
+    echo "Hello you!!! Have a good day!"
 }
