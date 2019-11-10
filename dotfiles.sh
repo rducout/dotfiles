@@ -4,5 +4,5 @@
 
 DIRNAME=$(dirname "$0")
 
-cd $DIRNAME/../
+cd $DIRNAME
 python -m dot_manager dotmanager.json

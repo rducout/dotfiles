@@ -4,19 +4,16 @@
 
 if [[ ! $(sudo echo 0) ]]; then exit; fi
 
-PACKAGE_TOOLS_LIST=(
-    gimp inkscape meld vlc xclip
-)
-
-PACKAGE_IDE_LIST=(
-    intellij-idea-community code
-)
-
-# full list of packages required
+# Package list to install via apt-get
 PACKAGE_LIST=(
-    git google-chrome-stable nodejs
-    "${PACKAGE_IDE_LIST[@]}"
-    "${PACKAGE_TOOLS_LIST[@]}"
+	meld xclip build-essential
+	git google-chrome-stable nodejs npm
+)
+
+# Package list to install via snap
+PACKAGE_LIST_SNAP=(
+	code intellij-idea-community
+	slack inkscape gimp vlc skype
 )
 
 # Succeed if package in parameter is installed
@@ -39,34 +36,10 @@ function add_google_chrome_rep {
 	return 0
 }
 
-# Adds Microsoft repository only if Visual Code not already installed
-function add_visual_code_rep {
-	if is_package_installed "code"; then
-		return 1
-	fi
-	echo "Adding Visual Code repository..."
-	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-	sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-	return 0
-}
-
-# Adds Intellij repository only if Intellij not already installed
-function add_intellij_rep {
-	if is_package_installed "intellij-idea-community"; then
-		return 1
-	fi
-	echo "Adding Intellij repository..."
-	sudo add-apt-repository -y ppa:mmk2410/intellij-idea
-	return 0
-}
-
 # Adds missing repositories only if they are not already installed
 function add_missing_rep {
 	need_update=false
-
 	if added_chrome_rep ; then need_update=true ; fi
-	if add_visual_code_rep ; then need_update=true ; fi
-	if add_intellij_rep ; then need_update=true ; fi
 	
 	if $need_update ; then
 		sudo apt-get update
@@ -77,11 +50,17 @@ function add_missing_rep {
 function install {
 	add_missing_rep
 	sudo apt -y install "${PACKAGE_LIST[@]}"
+
+	for package in "${PACKAGE_LIST_SNAP[@]}"
+	do
+		sudo snap install "${package}" --classic
+	done
 }
 
 echo -e "============================================================"
 echo -e "You are about to install the following packages:"
 ( IFS=$'\n'; echo "${PACKAGE_LIST[*]}" )
+( IFS=$'\n'; echo "${PACKAGE_LIST_SNAP[*]}" )
 echo -e "============================================================"
 read -r -p "Are you sure? [y|N] " configresponse
 echo
