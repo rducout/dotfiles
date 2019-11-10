@@ -9,11 +9,13 @@ EXTENSIONS_LIST=(
     GrapeCity.gc-excelviewer
     jasonnutter.search-node-modules
     ms-python.python
+    ms-vscode.csharp
     msjsdiag.debugger-for-chrome
     Orta.vscode-jest
     PKief.material-icon-theme
     rokoroku.vscode-theme-darcula
     trinm1709.dracula-theme-from-intellij
+    Unity.unity-debug
 )
 
 # Install all required extensions
