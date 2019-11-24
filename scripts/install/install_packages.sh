@@ -4,17 +4,11 @@
 
 if [[ ! $(sudo echo 0) ]]; then exit; fi
 
+DIRNAME=$(dirname "$0")
 # Package list to install via apt-get
-PACKAGE_LIST=(
-	meld xclip build-essential
-	git google-chrome-stable nodejs npm
-)
-
+readarray -t PACKAGE_LIST_APT < $DIRNAME/install.apt
 # Package list to install via snap
-PACKAGE_LIST_SNAP=(
-	code intellij-idea-community
-	slack inkscape gimp vlc skype
-)
+readarray -t PACKAGE_LIST_SNAP < $DIRNAME/install.snap
 
 # Succeed if package in parameter is installed
 function is_package_installed {
@@ -49,17 +43,20 @@ function add_missing_rep {
 # Install all required packages
 function install {
 	add_missing_rep
-	sudo apt -y install "${PACKAGE_LIST[@]}"
+	sudo apt -y install "${PACKAGE_LIST_APT[@]}"
 
 	for package in "${PACKAGE_LIST_SNAP[@]}"
 	do
 		sudo snap install "${package}" --classic
 	done
+
+	# Oh my zsh
+	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 echo -e "============================================================"
 echo -e "You are about to install the following packages:"
-( IFS=$'\n'; echo "${PACKAGE_LIST[*]}" )
+( IFS=$'\n'; echo "${PACKAGE_LIST_APT[*]}" )
 ( IFS=$'\n'; echo "${PACKAGE_LIST_SNAP[*]}" )
 echo -e "============================================================"
 read -r -p "Are you sure? [y|N] " configresponse

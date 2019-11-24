@@ -28,3 +28,10 @@ class Utils(object):
     def print_separator():
         """Print a separator"""
         Utils.print_msg('############################################################')
+
+    @staticmethod
+    def print_block(msg):
+        """Print a message surrounded by separators"""
+        Utils.print_separator()
+        Utils.print_msg(msg)
+        Utils.print_separator()

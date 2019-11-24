@@ -27,17 +27,6 @@ All scripts are located in **scripts**folder:
 #### DotManager
 
 
-
-## Installed packages
-
-Here is the list of all the packages installed by default:
-
-```
-gimp inkscape meld vlc xclip
-intellij-idea-community code
-git google-chrome-stable nodejs
-```
-
 ## TODOS
 
 - Backup system

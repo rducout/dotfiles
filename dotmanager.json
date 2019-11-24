@@ -1,18 +1,18 @@
 {
     "root": "./dotfiles",
+    "sudo": true,
     "links": {
-        "~/.bash_profile": {
-            "path": ".bash_profile",
-            "force": true
-        },
-        "~/.bash": {
-            "path": "bash",
-            "force": true
-        },
-        "~/.config/Code/User/settings.json": {
-            "path": "code/settings.json",
-            "force": true
-        }
+        "~/.bash": "bash",
+        "~/.oh-my-zsh/custom/aliases.zsh": "zsh/custom/aliases.zsh",
+        "~/.oh-my-zsh/custom/config.zsh": "zsh/custom/config.zsh",
+        "~/.oh-my-zsh/custom/functions.zsh": "zsh/custom/functions.zsh",
+        "~/.bash_profile": ".bash_profile",
+        "~/.config/Code/User/settings.json": "config/code/settings.json",
+        "~/.config/nautilus/desktop-metadata": "config/nautilus/desktop-metadata",
+        "~/.zshrc": ".zshrc",
+        "~/.config/user-dirs.dirs":  "config/user-dirs.dirs",
+        "~/.config/mimeapps.list": "config/mimeapps.list",
+        "/usr/share/fonts/custom": "fonts"
     },
     "append": {
         "~/.bashrc": ".bashrc"

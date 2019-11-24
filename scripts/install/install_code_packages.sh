@@ -2,21 +2,8 @@
 # Install required visual studio code extensions
 # Romain Ducout
 
-EXTENSIONS_LIST=(
-    akamud.vscode-theme-onedark
-    dbaeumer.vscode-eslint
-    Equinusocio.vsc-material-theme
-    GrapeCity.gc-excelviewer
-    jasonnutter.search-node-modules
-    ms-python.python
-    ms-vscode.csharp
-    msjsdiag.debugger-for-chrome
-    Orta.vscode-jest
-    PKief.material-icon-theme
-    rokoroku.vscode-theme-darcula
-    trinm1709.dracula-theme-from-intellij
-    Unity.unity-debug
-)
+DIRNAME=$(dirname "$0")
+readarray -t EXTENSIONS_LIST < $DIRNAME/install.code
 
 # Install all required extensions
 function install {

@@ -1,0 +1,21 @@
+{
+    "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "Darcula",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.renderWhitespace": "none",
+    "breadcrumbs.enabled": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "window.zoomLevel": 0,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.codeLens": false,
+    "csharpfixformat.style.spaces.beforeParenthesis": false,
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "terminal.integrated.fontFamily": "Menlo for Powerline"
+}

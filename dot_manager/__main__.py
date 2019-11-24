@@ -17,17 +17,13 @@ def parse_arguments():
 
 def main():
     """Main method - parse arguments and process configuration file"""
-    Utils.print_separator()
-    Utils.print_msg("Starting DotManager")
-    Utils.print_separator()
+    Utils.print_block("Starting DotManager")
 
     args = parse_arguments()
     dotmanager = DotManager(args.file)
     dotmanager.apply_configuration()
 
-    Utils.print_separator()
-    Utils.print_msg("Ending DotManager")
-    Utils.print_separator()
+    Utils.print_block("Ending DotManager")
 
 if __name__ == '__main__':
     main()
