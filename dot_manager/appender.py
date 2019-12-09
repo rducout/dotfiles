@@ -34,12 +34,12 @@ class Appender(object):
                 if line.startswith(start_str):
                     is_in_append = True
                 if not is_in_append:
-                    dst_buffer.write(line)
+                    dst_buffer.write(str.encode(line))
                 if line.startswith(end_str):
                     is_in_append = False
 
         with open(expanduser(path), "w") as write_file:
-            write_file.write(dst_buffer.getvalue())
+            write_file.write(dst_buffer.getvalue().decode())
 
     @staticmethod
     def manage_append(src_path, target_path, start_str=APPEND_START_STR, end_str=APPEND_END_STR):
@@ -56,6 +56,7 @@ class Appender(object):
     def manage_appends(self):
         """Apply all append configurations of the configuration file"""
         config_appends = self.config["append"]
-        for target_path, append in config_appends.iteritems():
+        for target_path in config_appends:
+            append = config_appends[target_path]
             src_path = os.path.join(self.config_root, append)
             Appender.manage_append(src_path, target_path)

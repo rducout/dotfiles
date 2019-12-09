@@ -10,6 +10,10 @@ alias cdw='cd ~/Downloads'
 alias cdc='cd ~/Documents'
 alias cdd='cd ~/Desktop'
 
+# git shortcuts
+alias rd-gst='git status'
+alias rd-gitrank='git shortlog -sn --no-merges'
+
 # ---------------------------------------------
 # utilities
 # ---------------------------------------------

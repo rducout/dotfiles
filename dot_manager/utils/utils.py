@@ -17,12 +17,12 @@ class Utils(object):
     @staticmethod
     def print_msg(msg):
         """Print a simple message"""
-        print PrintColors.GREEN + msg + PrintColors.NONE
+        print(PrintColors.GREEN + msg + PrintColors.NONE)
 
     @staticmethod
     def print_err(msg):
         """Print an error"""
-        print PrintColors.RED + msg + PrintColors.NONE
+        print(PrintColors.RED + msg + PrintColors.NONE)
 
     @staticmethod
     def print_separator():
