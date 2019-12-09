@@ -5,6 +5,7 @@ Appends configuration files to already existing files.
 """
 import os
 from dot_manager.utils.utils import Utils
+from six import string_types
 
 __author__ = "Romain Ducout"
 
@@ -46,8 +47,9 @@ class Linker(object):
     def manage_links(self):
         """Apply all link configurations of the configuration file"""
         config_links = self.config["links"]
-        for target_path, link_config in config_links.iteritems():
-            if isinstance(link_config, basestring):
+        for target_path in config_links:
+            link_config = config_links[target_path]
+            if isinstance(link_config, string_types):
                 link_path = os.path.join(self.config_root, link_config)
                 Linker.manage_link(link_path, target_path)
             else:

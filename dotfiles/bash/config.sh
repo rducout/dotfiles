@@ -24,7 +24,7 @@ __parse_git_branch() {
     [ $? -le 1 ] || return
 
     branch="${branch##refs/heads/}"
-    [ ${#branch} -ge 20 ] && branch="${branch:0:17}..."
+    [ ${#branch} -ge 25 ] && branch="${branch:0:17}..."
 
     [ -z "$branch" ] && return
 
