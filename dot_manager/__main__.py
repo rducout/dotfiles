@@ -12,7 +12,7 @@ __author__ = "Romain Ducout"
 def parse_arguments():
     """Parse the arguments"""
     parser = argparse.ArgumentParser()
-    parser.add_argument('file', type=argparse.FileType('r'), help='JSON configuration file')
+    parser.add_argument('files', nargs='*', type=argparse.FileType('r'), help='JSON configuration file(s)')
     return parser.parse_args()
 
 def main():
@@ -20,8 +20,9 @@ def main():
     Utils.print_block("Starting DotManager")
 
     args = parse_arguments()
-    dotmanager = DotManager(args.file)
-    dotmanager.apply_configuration()
+    for file in args.files:
+        dotmanager = DotManager(file)
+        dotmanager.apply_configuration()
 
     Utils.print_block("Ending DotManager")
 

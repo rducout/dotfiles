@@ -9,9 +9,9 @@
         "~/.bash_profile": ".bash_profile",
         "~/.config/Code/User/settings.json": "config/code/settings.json",
         "~/.config/nautilus/desktop-metadata": "config/nautilus/desktop-metadata",
-        "~/.zshrc": ".zshrc",
         "~/.config/user-dirs.dirs":  "config/user-dirs.dirs",
         "~/.config/mimeapps.list": "config/mimeapps.list",
+        "~/.zshrc": ".zshrc",
         "/usr/share/fonts/custom": "fonts"
     },
     "appends": {

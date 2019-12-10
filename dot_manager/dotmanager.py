@@ -19,11 +19,11 @@ class DotManager(object):
     """Applies a Dotfile configuration"""
 
     def __init__(self, config_file):
-        config_path = config_file.name
-        config_dir = os.path.dirname(config_path)
+        self.config_path = config_file.name
+        self.config_dir = os.path.dirname(self.config_path)
 
         self.config = json.load(config_file)
-        self.config_root = os.path.abspath(os.path.join(config_dir, self.config["root"]))
+        self.config_root = os.path.abspath(os.path.join(self.config_dir, self.config["root"]))
 
         self.linker = Linker(self.config, self.config_root)
         self.appender = Appender(self.config, self.config_root)
@@ -35,9 +35,11 @@ class DotManager(object):
             if os.getuid() != 0:
                 Utils.print_err("This configuration requires to run as sudo user!")
                 return
+        Utils.print_msg("Start managing: {}".format(self.config_path))
         Utils.print_msg("1. Managing links")
         self.linker.apply_configuration()
         Utils.print_msg("2. Managing appends")
         self.appender.apply_configuration()
         Utils.print_msg("3. Running scripts")
         self.runner.apply_configuration()
+        Utils.print_msg("Finished managing: {}".format(self.config_path))
