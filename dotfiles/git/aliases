@@ -1,0 +1,17 @@
+[alias]
+    # list all aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    # basic aliases
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+
+    # different level of log 1 to 3
+    log1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    log2 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    log3 = log -u
+
+    qamend = commit --amend --no-edit
+    rank = shortlog -sn --no-merges

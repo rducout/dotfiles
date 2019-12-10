@@ -14,7 +14,12 @@
         "~/.config/mimeapps.list": "config/mimeapps.list",
         "/usr/share/fonts/custom": "fonts"
     },
-    "append": {
+    "appends": {
         "~/.bashrc": ".bashrc"
+    },
+    "runs": {
+        "git/add.sh": {
+            "description": "update git configuration."
+        }
     }
 }

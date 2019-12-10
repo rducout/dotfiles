@@ -55,7 +55,10 @@ class Appender(object):
 
     def manage_appends(self):
         """Apply all append configurations of the configuration file"""
-        config_appends = self.config["append"]
+        if "appends" not in self.config:
+            return
+
+        config_appends = self.config["appends"]
         for target_path in config_appends:
             append = config_appends[target_path]
             src_path = os.path.join(self.config_root, append)

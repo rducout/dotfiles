@@ -4,8 +4,8 @@ Linker class of Dotmanager.
 Appends configuration files to already existing files.
 """
 import os
-from dot_manager.utils.utils import Utils
 from six import string_types
+from dot_manager.utils.utils import Utils
 
 __author__ = "Romain Ducout"
 
@@ -46,6 +46,9 @@ class Linker(object):
 
     def manage_links(self):
         """Apply all link configurations of the configuration file"""
+        if "links" not in self.config:
+            return
+
         config_links = self.config["links"]
         for target_path in config_links:
             link_config = config_links[target_path]

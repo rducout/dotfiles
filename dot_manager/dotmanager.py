@@ -5,10 +5,10 @@ Takes as input a configuration script and apply the given configuration.
 """
 import json
 import os
-import subprocess
 from dot_manager.utils.utils import Utils
 from dot_manager.appender import Appender
 from dot_manager.linker import Linker
+from dot_manager.runner import Runner
 
 __author__ = "Romain Ducout"
 
@@ -27,6 +27,7 @@ class DotManager(object):
 
         self.linker = Linker(self.config, self.config_root)
         self.appender = Appender(self.config, self.config_root)
+        self.runner = Runner(self.config, self.config_root)
 
     def apply_configuration(self):
         """Parse the configuration file and applies its content"""
@@ -38,3 +39,5 @@ class DotManager(object):
         self.linker.apply_configuration()
         Utils.print_msg("2. Managing appends")
         self.appender.apply_configuration()
+        Utils.print_msg("3. Running scripts")
+        self.runner.apply_configuration()
