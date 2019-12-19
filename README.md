@@ -1,7 +1,6 @@
 # dotfiles
 
 My personal dotfiles!
-This helps me in my various projects un Unix.
 
 ## Getting Started
 
@@ -45,11 +44,6 @@ Provided JSON is an object with the following members:
  - **links** (object/optional): List of symlinks of this configuration.
  - **appends** (object/optional): List of appends of this configuration.
  - **runs** (object/optional): List of scripts to run for this configuration.
-
-## TODOS
-
-- Backup system
-- DotManager documentation
 
 ## Authors
 
