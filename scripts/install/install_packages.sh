@@ -49,9 +49,14 @@ function install {
 	do
 		sudo snap install "${package}" --classic
 	done
+}
 
+function install_prompt_configuration {
 	# Oh my zsh
 	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+	# powerlevel9k theme
+	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 }
 
 echo -e "============================================================"
@@ -63,6 +68,7 @@ read -r -p "Are you sure? [y|N] " configresponse
 echo
 if [[ $configresponse =~ ^(y|yes|Y) ]];then
 	install
+	install_prompt_configuration
 else
 	echo "Skipping package install.";
 fi

@@ -11,11 +11,11 @@
         "typescriptreact"
     ],
     "window.zoomLevel": 0,
-    "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
     "editor.codeLens": false,
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
-    "terminal.integrated.fontFamily": "Menlo for Powerline"
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }"
 }
