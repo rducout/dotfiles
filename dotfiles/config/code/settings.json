@@ -17,5 +17,6 @@
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }"
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "open-in-browser.default": "chrome"
 }

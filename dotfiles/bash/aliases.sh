@@ -4,10 +4,12 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias cdr='cd ~/repos'
 
 # directory shortcuts
 alias cdw='cd ~/Downloads'
 alias cdc='cd ~/Documents'
+alias cdd='cd ~/Desktop'
 alias cdd='cd ~/Desktop'
 
 # ---------------------------------------------
