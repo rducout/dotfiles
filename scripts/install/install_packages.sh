@@ -51,6 +51,10 @@ function install {
 	done
 }
 
+function install_nvm {
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+}
+
 function install_prompt_configuration {
 	# Oh my zsh
 	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

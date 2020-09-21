@@ -6,6 +6,7 @@
         "~/.oh-my-zsh/custom/aliases.zsh": "zsh/custom/aliases.zsh",
         "~/.oh-my-zsh/custom/config.zsh": "zsh/custom/config.zsh",
         "~/.oh-my-zsh/custom/functions.zsh": "zsh/custom/functions.zsh",
+        "~/.oh-my-zsh/custom/init.zsh": "zsh/custom/init.zsh",
         "~/.bash_profile": ".bash_profile",
         "~/.config/Code/User/settings.json": "config/code/settings.json",
         "~/.config/nautilus/desktop-metadata": "config/nautilus/desktop-metadata",
