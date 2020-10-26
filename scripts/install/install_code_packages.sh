@@ -11,7 +11,6 @@ function install {
     do
         code --install-extension $extensions
     done
-	#sudo apt -y install "${EXTENSIONS_LIST[@]}"
 }
 
 echo -e "============================================================"

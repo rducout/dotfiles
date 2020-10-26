@@ -12,7 +12,7 @@ alias cdr='cd ~/repos'
 # kill intellij
 alias rd-kill-intellij='killall -9 chrome'
 # list all vs code extensions
-alias rd-code-ext='code --list-extensions'
+alias rd-code-extensions='code --list-extensions'
 
 # anaconda
 alias rd-conda-nav="conda run anaconda-navigator &"

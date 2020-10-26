@@ -18,5 +18,10 @@
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
-    "open-in-browser.default": "chrome"
+    "open-in-browser.default": "chrome",
+    "editor.detectIndentation": false,
+    "python.linting.pylintArgs": [
+        "--generate-members"
+    ],
+    "terminal.integrated.inheritEnv": false
 }
