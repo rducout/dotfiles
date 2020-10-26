@@ -8,7 +8,7 @@ import subprocess
 
 __author__ = "Romain Ducout"
 
-class Runner(object):
+class Runner():
     """Applies the runs of a configuration"""
 
     def __init__(self, config, config_root):

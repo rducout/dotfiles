@@ -5,13 +5,13 @@ Utilitary methods.
 
 __author__ = "Romain Ducout"
 
-class PrintColors(object):
+class PrintColors():
     """Characters to change console color"""
     GREEN = '\033[92m'
     RED = '\033[91m'
     NONE = '\033[0m'
 
-class Utils(object):
+class Utils():
     """Utilities methods"""
 
     @staticmethod

@@ -15,7 +15,7 @@ __author__ = "Romain Ducout"
 APPEND_START_STR = '# Added by DotManager -- start\n'
 APPEND_END_STR = '# Added by DotManager -- end\n'
 
-class DotManager(object):
+class DotManager():
     """Applies a Dotfile configuration"""
 
     def __init__(self, config_file):

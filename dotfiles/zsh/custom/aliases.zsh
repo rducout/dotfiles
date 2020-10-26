@@ -6,6 +6,9 @@ alias cdc='cd ~/Documents'
 alias cdd='cd ~/Desktop'
 alias cdr='cd ~/repos'
 
+# list sub directories in tree form
+alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
 # ---------------------------------------------
 # utilities
 # ---------------------------------------------

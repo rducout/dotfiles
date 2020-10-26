@@ -12,7 +12,12 @@ __author__ = "Romain Ducout"
 def parse_arguments():
     """Parse the arguments"""
     parser = argparse.ArgumentParser()
-    parser.add_argument('files', nargs='*', type=argparse.FileType('r'), help='JSON configuration file(s)')
+    parser.add_argument(
+        'files',
+        nargs='*',
+        type=argparse.FileType('r'),
+        help='JSON configuration file(s)'
+    )
     return parser.parse_args()
 
 def main():

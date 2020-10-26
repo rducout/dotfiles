@@ -7,7 +7,7 @@ readarray -t PACKAGES_LIST < $DIRNAME/install.python
 
 # Install all required extensions
 function install {
-	sudo pip3 install "${PACKAGES_LIST[@]}"
+	sudo pip3 install "${PACKAGES_LIST[@]}" --upgrade
 }
 
 echo -e "============================================================"

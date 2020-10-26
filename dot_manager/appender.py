@@ -60,6 +60,9 @@ class Appender(object):
 
         config_appends = self.config["appends"]
         for target_path in config_appends:
+            print("Appending {target_path}".format(
+                target_path=target_path
+            ))
             append = config_appends[target_path]
             src_path = os.path.join(self.config_root, append)
             Appender.manage_append(src_path, target_path)
