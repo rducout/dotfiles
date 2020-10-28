@@ -4,7 +4,7 @@ quake-specific-monitor=0
 terminal-title-show-when-single=false
 warn-vte-config-issue=false
 
-com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+[com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 background-color='#1E1E1E'
 badge-color='#AC7EA8'
 badge-color-set=false
@@ -26,3 +26,6 @@ dock-position='BOTTOM'
 multi-monitor=true
 preferred-monitor=0
 running-indicator-style='DASHES'
+
+[org/gnome/gedit/preferences/editor]
+scheme='eiffel'

@@ -25,12 +25,12 @@ class Linker():
         """Apply a single link configuration"""
         target_path = os.path.expanduser(target_path)
 
-        if not os.path.exists(link_path):
-            Utils.print_err("No target at path: {path}".format(path=link_path))
-            return
+        if not os.path.exists(os.path.dirname(target_path)) and create_dir:
+            os.makedirs(os.path.dirname(target_path))
 
-        if create_dir:
-            os.makedirs(os.path.dirname(target_path), True)
+        if not os.path.exists(link_path):
+            Utils.print_err("No file to link at path: {path}".format(path=link_path))
+            return
 
         if os.path.exists(target_path):
             if force:
