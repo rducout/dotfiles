@@ -34,7 +34,7 @@ class DotManager():
         if self.config["sudo"]:
             if os.getuid() != 0:
                 Utils.print_err("This configuration requires to run as sudo user!")
-                return
+                #return
         Utils.print_msg("Start managing: {}".format(self.config_path))
         Utils.print_msg("1. Managing links")
         self.linker.apply_configuration()

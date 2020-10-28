@@ -23,6 +23,8 @@ class Linker():
     @staticmethod
     def manage_link(link_path, target_path, force=True, create_dir=False):
         """Apply a single link configuration"""
+        target_path = os.path.expanduser(target_path)
+
         if not os.path.exists(link_path):
             Utils.print_err("No target at path: {path}".format(path=link_path))
             return
@@ -54,10 +56,6 @@ class Linker():
         config_links = self.config["links"]
         for target_path in config_links:
             link_config = config_links[target_path]
-            try:
-                target_path = target_path.format(user_root=self.config["user_root"])
-            except:
-                pass
             if isinstance(link_config, string_types):
                 link_path = os.path.join(self.config_root, link_config)
                 Linker.manage_link(link_path, target_path)

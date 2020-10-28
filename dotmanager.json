@@ -1,29 +1,32 @@
 {
     "root": "./dotfiles",
-    "user_root": "/home/romain",
-    "sudo": true,
+    "sudo": false,
     "links": {
-        "{user_root}/.bash": "bash",
-        "{user_root}/.oh-my-zsh/custom/aliases.zsh": "zsh/custom/aliases.zsh",
-        "{user_root}/.oh-my-zsh/custom/config.zsh": "zsh/custom/config.zsh",
-        "{user_root}/.oh-my-zsh/custom/functions.zsh": "zsh/custom/functions.zsh",
-        "{user_root}/.oh-my-zsh/custom/init.zsh": "zsh/custom/init.zsh",
-        "{user_root}/.bash_profile": ".bash_profile",
-        "{user_root}/.config/Code/User/settings.json": "config/code/settings.json",
-        "{user_root}/.config/nautilus/desktop-metadata": "config/nautilus/desktop-metadata",
-        "{user_root}/.config/user-dirs.dirs":  "config/user-dirs.dirs",
-        "{user_root}/.config/mimeapps.list": "config/mimeapps.list",
-        "{user_root}/.zshrc": ".zshrc",
-        "{user_root}/.zshenv": ".zshenv",
-        "{user_root}/.p10k.zsh": ".p10k.zsh",
-        "/usr/share/fonts/custom": "fonts"
+        "~/.bash": "bash",
+        "~/.oh-my-zsh/custom/aliases.zsh": "zsh/custom/aliases.zsh",
+        "~/.oh-my-zsh/custom/config.zsh": "zsh/custom/config.zsh",
+        "~/.oh-my-zsh/custom/functions.zsh": "zsh/custom/functions.zsh",
+        "~/.oh-my-zsh/custom/init.zsh": "zsh/custom/init.zsh",
+        "~/.bash_profile": ".bash_profile",
+        "~/.config/Code/User/settings.json": "config/code/settings.json",
+        "~/.config/nautilus/desktop-metadata": "config/nautilus/desktop-metadata",
+        "~/.config/user-dirs.dirs":  "config/user-dirs.dirs",
+        "~/.config/mimeapps.list": "config/mimeapps.list",
+        "~/.config/neofetch/config.conf": "config/neofetch/config.conf",
+        "~/.config/tilix/schemes": "config/tilix/schemes",
+        "~/.zshrc": ".zshrc",
+        "~/.zshenv": ".zshenv",
+        "~/.p10k.zsh": ".p10k.zsh"
     },
     "appends": {
         "~/.bashrc": ".bashrc"
     },
     "runs": {
-        "git/add.sh": {
+        "git/apply.sh": {
             "description": "update git configuration."
+        },
+        "dconf/apply.sh": {
+            "description": "apply dconf files."
         }
     }
 }

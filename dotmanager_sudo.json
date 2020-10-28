@@ -1,0 +1,11 @@
+{
+    "root": "./dotfiles",
+    "sudo": true,
+    "links": {
+        "/usr/share/fonts/custom": "fonts"
+    },
+    "appends": {
+    },
+    "runs": {
+    }
+}

@@ -1,0 +1,28 @@
+[com/gexperts/Tilix]
+app-title='${appName}'
+quake-specific-monitor=0
+terminal-title-show-when-single=false
+warn-vte-config-issue=false
+
+com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+background-color='#1E1E1E'
+badge-color='#AC7EA8'
+badge-color-set=false
+bold-color-set=false
+cursor-colors-set=false
+foreground-color='#CCCCCC'
+highlight-colors-set=false
+palette=['#6A787A', '#E9653B', '#39E9A8', '#E5B684', '#44AAE6', '#E17599', '#3DD5E7', '#C3DDE1', '#598489', '#E65029', '#00FF9A', '#E89440', '#009AFB', '#FF578F', '#5FFFFF', '#D9FBFF']
+use-theme-colors=false
+visible-name='Default'
+
+[org/gnome/shell]
+favorite-apps=['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'com.gexperts.Tilix.desktop', 'code_code.desktop']
+
+[org/gnome/shell/extensions/dash-to-dock]
+click-action='previews'
+dock-fixed=false
+dock-position='BOTTOM'
+multi-monitor=true
+preferred-monitor=0
+running-indicator-style='DASHES'
