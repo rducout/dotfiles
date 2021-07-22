@@ -1,0 +1,12 @@
+dos2unix
+meld
+xclip
+build-essential
+git
+nodejs
+npm
+zsh
+powerline
+htop
+python3
+python3-pip

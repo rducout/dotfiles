@@ -2,25 +2,42 @@
 
 My personal dotfiles!
 
-## Getting Started
+## Getting Started on Ubuntu
+
+### Prerequisites
+
+Nothing is required but having your Unix distribution installed.
+Tested on Ubuntu 18.04.
+
+### Installation
 
 After cloning this repository simply run the bootstrap script:
 
-```
+```bash
 ./bootstrap.sh
 ```
 This will first install all the required package and then run DotManager with the default configuration file.
 
-## Prerequisites
+## Getting Started on Windows
 
-Nothing is required but having your Unix distribution installed.
-Tested on Ubuntu 18.04.
+### Prerequisites
+
+You will need to run the following scripts on an Ubuntu command prompt after having installed is using WSL (Windows Subsystem for Linux).
+
+### Installation
+
+Similar to Ubuntu, after cloning this repository simply run the bootstrap script in the windows folder:
+
+```bash
+cd windows
+./bootstrap.sh
+```
 
 # Usage
 
 ## Scripts
 
-All scripts are located in **scripts**folder:
+All scripts are located in **scripts** folder:
 - **bootstrap.sh**: Installs all the usual packages and run default dotfile configuration.
 - **install.sh**: Installs all the usual packages.
 - **dotfiles.sh**: Run default dotfile configuration.
@@ -29,11 +46,11 @@ All scripts are located in **scripts**folder:
 
 DotManager is a Python tool to deploy dotfiles based on JSON configuration file(s).  
 To deploy the default dotfile configuration, you can run the tool with the following line:
-```
+```bash
 python -m dot_manager dotmanager.json
 ```
 You can also append your own configuration as it supports multiple configurations:
-```
+```bash
 python -m dot_manager dotmanager.json myconfig.json
 ```
 

@@ -1,0 +1,22 @@
+{
+    "root": "../dotfiles",
+    "sudo": false,
+    "links": {
+        "~/.bash": "bash",
+        "~/.oh-my-zsh/custom/aliases.zsh": "zsh/custom/aliases.zsh",
+        "~/.oh-my-zsh/custom/config.zsh": "zsh/custom/config.zsh",
+        "~/.oh-my-zsh/custom/functions.zsh": "zsh/custom/functions.zsh",
+        "~/.oh-my-zsh/custom/init.zsh": "zsh/custom/init.zsh",
+        "~/.bash_profile": ".bash_profile",
+        "~/.zshrc": "windows/.zshrc",
+        "~/.zshenv": ".zshenv",
+        "~/.p10k.zsh": ".p10k.zsh"
+    },
+    "appends": {
+    },
+    "runs": {
+        "git/apply.sh": {
+            "description": "update git configuration."
+        }
+    }
+}
