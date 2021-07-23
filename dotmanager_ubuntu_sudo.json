@@ -2,7 +2,7 @@
     "root": "./dotfiles",
     "sudo": true,
     "links": {
-        "/usr/share/fonts/custom": "fonts"
+        "/usr/share/fonts/custom": "ubuntu/fonts"
     },
     "appends": {
     },

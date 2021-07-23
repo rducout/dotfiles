@@ -3,7 +3,9 @@
 # Romain Ducout
 
 DIRNAME=$(dirname "$0")
-readarray -t EXTENSIONS_LIST < $DIRNAME/install.code
+PLATFORM=$1
+
+readarray -t EXTENSIONS_LIST < $DIRNAME/../installs/$PLATFORM/install.code
 
 # Install all required extensions
 function install {

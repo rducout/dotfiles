@@ -3,7 +3,9 @@
 # Romain Ducout
 
 DIRNAME=$(dirname "$0")
-readarray -t PACKAGES_LIST < $DIRNAME/install.python
+PLATFORM=$1
+
+readarray -t PACKAGES_LIST < $DIRNAME/../installs/$PLATFORM/install.python
 
 # Install all required extensions
 function install {

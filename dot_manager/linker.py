@@ -43,7 +43,7 @@ class Linker():
             link_path=link_path,
             target_path=target_path
         ))
-        os.system("ln -s \"{link_path}\" \"{target_path}\" 2> /dev/null".format(
+        os.system("ln -sf \"{link_path}\" \"{target_path}\" 2> /dev/null".format(
             link_path=link_path,
             target_path=target_path
         ))

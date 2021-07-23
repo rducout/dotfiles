@@ -6,8 +6,8 @@ My personal dotfiles!
 
 ### Prerequisites
 
-Nothing is required but having your Unix distribution installed.
-Tested on Ubuntu 18.04.
+Nothing is required but having your Unix distribution installed.\
+Tested on Ubuntu 18.04 and WSL (Windows Subsystem for Linux).
 
 ### Installation
 
@@ -17,21 +17,6 @@ After cloning this repository simply run the bootstrap script:
 ./bootstrap.sh
 ```
 This will first install all the required package and then run DotManager with the default configuration file.
-
-## Getting Started on Windows
-
-### Prerequisites
-
-You will need to run the following scripts on an Ubuntu command prompt after having installed is using WSL (Windows Subsystem for Linux).
-
-### Installation
-
-Similar to Ubuntu, after cloning this repository simply run the bootstrap script in the windows folder:
-
-```bash
-cd windows
-./bootstrap.sh
-```
 
 # Usage
 

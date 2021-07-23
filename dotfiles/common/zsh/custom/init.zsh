@@ -1,3 +1,6 @@
+# Adds dotfile env variable
+export DOTFILE_PATH=$(readlink -f ~/.bash/../..)
+
 # Loads NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

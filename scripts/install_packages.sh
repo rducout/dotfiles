@@ -5,10 +5,12 @@
 if [[ ! $(sudo echo 0) ]]; then exit; fi
 
 DIRNAME=$(dirname "$0")
+PLATFORM=$1
+
 # Package list to install via apt-get
-readarray -t PACKAGE_LIST_APT < $DIRNAME/install.apt
+readarray -t PACKAGE_LIST_APT < $DIRNAME/../installs/$PLATFORM/install.apt
 # Package list to install via snap
-readarray -t PACKAGE_LIST_SNAP < $DIRNAME/install.snap
+readarray -t PACKAGE_LIST_SNAP < $DIRNAME/../installs/$PLATFORM/install.snap
 
 # Succeed if package in parameter is installed
 function is_package_installed {
@@ -33,22 +35,11 @@ function add_google_chrome_rep {
 # Adds missing repositories only if they are not already installed
 function add_missing_rep {
 	need_update=false
-	if added_chrome_rep ; then need_update=true ; fi
+	if add_google_chrome_rep ; then need_update=true ; fi
 	
 	if $need_update ; then
 		sudo apt-get update
 	fi
-}
-
-# Install all required packages
-function install {
-	add_missing_rep
-	sudo apt -y install "${PACKAGE_LIST_APT[@]}"
-
-	for package in "${PACKAGE_LIST_SNAP[@]}"
-	do
-		sudo snap install "${package}" --classic
-	done
 }
 
 function install_nvm {
@@ -64,6 +55,25 @@ function install_prompt_configuration {
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 }
 
+
+function install_wsl {
+	sudo apt -y install "${PACKAGE_LIST_APT[@]}"
+
+	install_prompt_configuration
+}
+
+function install_ubuntu {
+	add_missing_rep
+	sudo apt -y install "${PACKAGE_LIST_APT[@]}"
+
+	for package in "${PACKAGE_LIST_SNAP[@]}"
+	do
+		sudo snap install "${package}" --classic
+	done
+
+	install_prompt_configuration
+}
+
 echo -e "============================================================"
 echo -e "You are about to install the following packages:"
 ( IFS=$'\n'; echo "${PACKAGE_LIST_APT[*]}" )
@@ -72,8 +82,12 @@ echo -e "============================================================"
 read -r -p "Are you sure? [y|N] " configresponse
 echo
 if [[ $configresponse =~ ^(y|yes|Y) ]];then
-	install
-	install_prompt_configuration
+	if [[ "${PLATFORM}" == "wsl" ]]; then
+		install_wsl
+	fi
+	if [[ "${PLATFORM}" == "ubuntu" ]]; then
+		install_ubuntu
+	fi
 else
 	echo "Skipping package install.";
 fi

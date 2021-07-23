@@ -4,6 +4,13 @@
 
 DIRNAME=$(dirname "$0")
 
-( exec $DIRNAME/scripts/install/install_packages.sh )
-( exec $DIRNAME/scripts/install/install_code_packages.sh )
-( exec $DIRNAME/scripts/install/install_python.sh )
+read var </proc/sys/kernel/osrelease
+if echo $var | grep -iqF "Microsoft"; then
+    PLATFORM="wsl"
+else
+    PLATFORM="ubuntu"
+fi
+
+( exec $DIRNAME/scripts/install_packages.sh $PLATFORM )
+( exec $DIRNAME/scripts/install_code_packages.sh $PLATFORM )
+( exec $DIRNAME/scripts/install_python.sh $PLATFORM )
