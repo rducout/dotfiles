@@ -21,6 +21,7 @@
             "create_dir": true,
             "path": "ubuntu/config/conky/conky.conf"
         },
+        "~/.config/bpytop/bpytop.conf": "common/config/bpytop/bpytop.conf",
         "~/.local/share/applications/com.gexperts.Tilix.desktop": "ubuntu/local/share/applications/com.gexperts.Tilix.desktop",
         "~/.local/share/gtksourceview-4": "ubuntu/local/share/gtksourceview-4",
         "~/.zshrc": "ubuntu/.zshrc",
