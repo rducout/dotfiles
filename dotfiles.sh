@@ -12,4 +12,4 @@ else
 fi
 
 cd $DIRNAME
-python3 -m dot_manager dotmanager_${PLATFORM}.json
+python3 -m dot_manager dotfiles/dotmanager_${PLATFORM}.json

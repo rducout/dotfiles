@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat ./dotfiles/dconf/dconf | dconf load /
+cat ./dotfiles/ubuntu/dconf/dconf | dconf load /

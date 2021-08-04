@@ -1,0 +1,33 @@
+{
+    "root": "./",
+    "sudo": false,
+    "links": {
+        "~/.bash": "common/.bash",
+        "~/.oh-my-zsh/custom/aliases.zsh": "common/.oh-my-zsh/custom/aliases.zsh",
+        "~/.oh-my-zsh/custom/aliases_wsl.zsh": "wsl/.oh-my-zsh/custom/aliases_wsl.zsh",
+        "~/.oh-my-zsh/custom/config.zsh": "common/.oh-my-zsh/custom/config.zsh",
+        "~/.oh-my-zsh/custom/functions.zsh": "common/.oh-my-zsh/custom/functions.zsh",
+        "~/.oh-my-zsh/custom/init.zsh": "common/.oh-my-zsh/custom/init.zsh",
+        "~/.bash_profile": "common/.bash_profile",
+        "~/.config/neofetch/config.conf": "common/.config/neofetch/config.conf",
+        "~/.config/bpytop/bpytop.conf": "common/.config/bpytop/bpytop.conf",
+        "~/.config/bat/config": {
+            "create_dir": true,
+            "path": "common/.config/bat/config"
+        },
+        "~/.zshrc": "wsl/.zshrc",
+        "~/.zshenv": "common/.zshenv",
+        "~/.p10k.zsh": "common/.p10k.zsh"
+    },
+    "appends": {
+        "~/.bashrc": "common/.bashrc"
+    },
+    "runs": {
+        "common/git/apply.sh": {
+            "description": "update git configuration."
+        },
+        "common/apply.sh": {
+            "description": "common setup scripts."
+        }
+    }
+}

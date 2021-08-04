@@ -1,5 +1,5 @@
 {
-    "root": "./dotfiles",
+    "root": "./",
     "sudo": true,
     "links": {
         "/usr/share/fonts/custom": "ubuntu/fonts"
