@@ -21,32 +21,32 @@ class Linker():
         self.manage_links()
 
     @staticmethod
-    def manage_link(link_path, target_path, force=True, create_dir=False):
-        """Apply a single link configuration"""
-        target_path = os.path.expanduser(target_path)
-
-        if not os.path.exists(os.path.dirname(target_path)) and create_dir:
-            os.makedirs(os.path.dirname(target_path))
-
+    def manage_link(link_path, target_path, create_dir=True):
         if not os.path.exists(link_path):
             Utils.print_err("No file to link at path: {path}".format(path=link_path))
             return
 
-        if os.path.exists(target_path):
-            if force:
-                os.remove(target_path)
-            else:
-                Utils.print_err("Target path already exists: {path}".format(path=target_path))
-                return
+        print("Linking {link_path} --> {target_path} :".format(
+            link_path=link_path,
+            target_path=target_path
+        ))
 
-        print("Linking {link_path} --> {target_path}".format(
-            link_path=link_path,
-            target_path=target_path
-        ))
-        os.system("ln -sf \"{link_path}\" \"{target_path}\" 2> /dev/null".format(
-            link_path=link_path,
-            target_path=target_path
-        ))
+        for path, dirs, files in os.walk(link_path):
+            for name in files:
+                file_link_path = os.path.join(path, name)
+                file_rel_path = os.path.relpath(file_link_path, link_path)
+                file_target_path = os.path.join(target_path, file_rel_path)
+                file_target_path = os.path.expanduser(file_target_path)
+
+                if not os.path.exists(os.path.dirname(file_target_path)) and create_dir:
+                    os.makedirs(os.path.dirname(file_target_path))
+
+                print("\t{file_rel_path}".format(file_rel_path=file_rel_path))
+
+                os.system("ln -sf \"{file_link_path}\" \"{file_target_path}\" 2> /dev/null".format(
+                    file_link_path=file_link_path,
+                    file_target_path=file_target_path
+                ))
 
     def manage_links(self):
         """Apply all link configurations of the configuration file"""
@@ -54,18 +54,9 @@ class Linker():
             return
 
         config_links = self.config["links"]
-        for target_path in config_links:
-            link_config = config_links[target_path]
+        for link_path in config_links:
+            link_config = config_links[link_path]
             if isinstance(link_config, string_types):
-                link_path = os.path.join(self.config_root, link_config)
+                link_path = os.path.join(self.config_root, link_path)
+                target_path = link_config
                 Linker.manage_link(link_path, target_path)
-            else:
-                link_path = os.path.join(self.config_root, link_config["path"])
-                create_dir = link_config["create_dir"] if "create_dir" in link_config else False
-                force = link_config["force"] if "force" in link_config else True
-                Linker.manage_link(
-                    link_path,
-                    target_path,
-                    force,
-                    create_dir
-                )
