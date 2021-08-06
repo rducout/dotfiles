@@ -43,7 +43,7 @@ class Linker():
 
                 print("\t{file_rel_path}".format(file_rel_path=file_rel_path))
 
-                os.system("ln -sf \"{file_link_path}\" \"{file_target_path}\" 2> /dev/null".format(
+                os.system("ln -sf \"{file_link_path}\" \"{file_target_path}\"".format(
                     file_link_path=file_link_path,
                     file_target_path=file_target_path
                 ))
