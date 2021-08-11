@@ -5,7 +5,14 @@
 DIRNAME=$(dirname "$0")
 PLATFORM=$1
 
-readarray -t PACKAGES_LIST < $DIRNAME/../installs/$PLATFORM/install.python
+source $DIRNAME/functions.sh
+
+declare -a PYTHON_FILE_LIST=(
+    $DIRNAME/../installs/common/install.python
+    $DIRNAME/../installs/$PLATFORM/install.python
+)
+declare -a PACKAGES_LIST=()
+read_install_files PYTHON_FILE_LIST PACKAGES_LIST
 
 # Install all required extensions
 function install {

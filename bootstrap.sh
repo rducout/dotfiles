@@ -6,8 +6,11 @@ if [[ ! $(sudo echo 0) ]]; then exit; fi
 
 DIRNAME=$(dirname "$0")
 
-#install required packages
-( exec $DIRNAME/install.sh )
+# install required packages
+source $DIRNAME/install.sh
 
 # initialises dotfiles links
-( exec $DIRNAME/dotfiles.sh )
+source $DIRNAME/dotfiles.sh
+
+# initialises github repositories
+source $DIRNAME/gitinit.sh

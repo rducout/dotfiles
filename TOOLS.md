@@ -28,6 +28,8 @@
 - [dos2unix](https://linux.die.net/man/1/dos2unix): DOS/MAC to UNIX text file format converter
 - [bat](https://github.com/sharkdp/bat): Displays files (`cat` clone) with syntax highlighting and Git integration
 - [fd](https://github.com/sharkdp/fd): find entries in filesystem (`find` clone)
+- [tree](https://linux.die.net/man/1/tree): List contents of directories in a tree-like format
+- [gh](https://cli.github.com/): CLI for github
 
 ## Development tools
 ### IDE

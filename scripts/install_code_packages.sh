@@ -5,7 +5,14 @@
 DIRNAME=$(dirname "$0")
 PLATFORM=$1
 
-readarray -t EXTENSIONS_LIST < $DIRNAME/../installs/$PLATFORM/install.code
+source $DIRNAME/functions.sh
+
+declare -a CODE_FILE_LIST=(
+    $DIRNAME/../installs/common/install.code
+    $DIRNAME/../installs/$PLATFORM/install.code
+)
+declare -a EXTENSIONS_LIST=()
+read_install_files CODE_FILE_LIST EXTENSIONS_LIST
 
 # Install all required extensions
 function install {
