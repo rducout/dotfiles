@@ -3,7 +3,8 @@
     "sudo": false,
     "links": {
         "links/common": "~/",
-        "links/ubuntu": "~/"
+        "links/ubuntu": "~/",
+        "customs/links": "~/"
     },
     "appends": {
         "~/.bashrc": "appends/.bashrc"
