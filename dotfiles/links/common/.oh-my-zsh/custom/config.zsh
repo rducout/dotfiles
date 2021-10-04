@@ -6,6 +6,9 @@ setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
 
+# Set UP arrow to trigger fzf history (default CTRL+R)
+bindkey "${key[Up]}" fzf-history-widget
+
 # Copy of conda added content in ~:bashrc
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
